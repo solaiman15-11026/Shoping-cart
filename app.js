@@ -1,29 +1,42 @@
-function updateCase(input, isAdd) {
-    const caseNumber = document.getElementById(input);
-    const totalTake = caseNumber.value;
+function updateCase(product, isAdd, price, Amont) {
+    const caseNumber = document.getElementById(product);
+    let totalTake = caseNumber.value;
     if (isAdd == true) {
-        caseNumber.value = parseInt(totalTake) + 1;
+        totalTake = parseInt(totalTake) + 1;
     } else {
         if (totalTake > 0) {
-            caseNumber.value = totalTake - 1;
+            totalTake = totalTake - 1;
         }
     }
+    caseNumber.value = totalTake;
+    //update case price------ 
+    const caseAmont = document.getElementById(Amont);
+    caseAmont.innerText = totalTake * price;
 }
 
+//phone total take and rpice-----------------
+document.getElementById('phone-plus').addEventListener('click', function () {
+    updateCase('phone-number', true, 1219, 'phone-Amont');
+
+});
+document.getElementById('phone-mins').addEventListener('click', function () {
+    updateCase('phone-number', false, 1219, 'phone-Amont');
+
+});
 
 
 
-
-
+// case total take ans price-------------
 document.getElementById('case-plus').addEventListener('click', function () {
 
-    const totalTake = updateCase('case-number', true);
+    updateCase('case-number', true, 59, 'case-Amont');
 
 });
 
 document.getElementById('case-mins').addEventListener('click', function () {
 
-    const totalTake = updateCase('case-number');
+    updateCase('case-number', false, 59, 'case-Amont');
 
 })
+
 
