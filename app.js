@@ -1,5 +1,4 @@
 // total order --------------------------
-
 function updateNumber(product, isAdd, price, Amont) {
     const productNumber = document.getElementById(product);
     let totalTake = productNumber.value;
@@ -36,16 +35,6 @@ function calculateAmont() {
     document.getElementById('tax').innerText = tax;
     document.getElementById('total').innerText = total;
 }
-
-
-
-
-
-
-
-
-
-
 //phone total take and rpice-----------------
 document.getElementById('phone-plus').addEventListener('click', function () {
     updateNumber('phone-number', true, 1219, 'phone-Amont');
